@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Pokémon Game</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+    <script src="./dist/map.js" type="module"></script>
+    <script src="./dist/classes/index.js" type="module"></script>
+</head>
+<body>
+    <main class="container">
+      <div id="flush"></div>
+      <canvas id="canvas"></canvas>
+      <div id="attackDisplay">
+        <div class="healthBar monster">
+          <p><strong>Draggle</strong></p>
+          <progress id="draggle-healthBar" max="100" value="100" class="progress-bar"></progress>
+        </div>
+        <div class="healthBar player">
+          <p><strong>Emby</strong></p>
+          <progress id="emby-healthBar" max="100" value="100" class="progress-bar"></progress>
+        </div>
+        <div class="attackBar">
+          <div class="attackButtons">
+            <button value="Tackle" class="kbc-button attackButton">태클걸기</button>
+            <button value="FireBall" class="kbc-button attackButton">파이어볼</button>
+          </div>
+          <div class="attackDesc">
+            <p>[system] 공격을 시작해보세요!</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./dist/index.js" type="module"></script>
+    <script src="./dist/battles.js" type="module"></script>
+</body>
+</html>

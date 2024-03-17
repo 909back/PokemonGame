@@ -1,0 +1,141 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+* {  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Galmuri7;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  min-width: 400px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  position: relative;
+}
+
+#canvas {
+  display: block;
+  max-width: 1024px;
+  width: 100%;
+}
+
+#flush {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  display: none;
+}
+
+#flush.fadeout { animation: fadeout 1s; display: block; }
+#flush.fadein { animation: fadein 1s; }
+
+#attackDisplay {
+  position: absolute;
+  max-width: 1024px;
+  width: 100%;
+  aspect-ratio: 1/ 0.56916;
+  display: none;
+}
+
+#attackDisplay .attackBar {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1 / 0.14;
+  bottom: 0;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.attackBar .attackButtons {
+  flex: 0 0 auto;
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.attackBar .attackDesc {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 100%;
+  padding: 16px;
+  font-size: 14px;
+  overflow: auto;
+}
+
+.attackBar .attackDesc p + .attackBar .attackDesc p {
+  margin: 12px 0 0;
+}
+
+.attackBar .attackButtons .attackButton {
+  color: black;
+  cursor: pointer;
+  font-family: Galmuri7;
+}
+
+
+
+#attackDisplay .healthBar {
+  position: absolute;
+  width: 25%;
+  background: white;
+  border: 4px solid black;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#attackDisplay .healthBar p strong {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+#attackDisplay .healthBar .progress-bar {
+  width: 100%;
+  height: 10px;
+  appearance: none;
+  border: none;
+}
+
+#attackDisplay .healthBar .progress-bar::-webkit-progress-bar {
+  border-radius: 20px;
+  background-color: #ddd;
+} 
+
+#attackDisplay .healthBar .progress-bar::-webkit-progress-value {
+  border-radius: 20px;
+  background-color: green;
+  transition : width 1s ease;
+} 
+
+#attackDisplay .healthBar.monster {
+  top: 15%;
+  left: 8%;
+}
+
+#attackDisplay .healthBar.player {
+  top: 52%;
+  left: 67%;
+}
+
+@keyframes fadeout {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadein {
+  from { opacity: 1; display: block; }
+  to { opacity: 0; display: none }
+}
